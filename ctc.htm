@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <TITLE>CTC</TITLE>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/picnicss/6.3.2/picnic.min.css"></link>
+  <style>
+    body {
+      padding: 5px 50px;
+    }
+    .hdr {
+      width: 100%;
+      text-align: center;
+    }
+    .team-btn {
+      width: 95%;
+    }
+    .instructions {
+      font-size: 11pt;
+    }
+    a.pseudo.button {
+      color: #0074d9;
+    }
+    a.pseudo.button:focus {
+      box-shadow: none;
+    }
+    a.pseudo.button:focus:hover {
+      box-shadow: inset 0 0 0 99em rgba(17,17,17,0.1);
+    }
+    .note {
+      font-style: italic;
+      text-align: center;
+    }
+    .centered {
+      text-align: center;
+    }
+    img {
+      margin-top: 15px;
+      border: 2px solid black;
+      width: 100%;
+      max-width: 350px;
+    }
+  </style>
+  <script>
+    function showHideInstructions() {
+      var divs = document.getElementsByClassName('instructions'),
+          display = (divs[0].style.display === 'none') ? 'block' : 'none';
+      for (var i=0; i<divs.length; i++ ) { divs[i].style.display = display; }
+      return false;
+    }
+    function getQueryString() {
+      var results = /\?(.*)$/.exec(window.location.href);
+      return results ? decodeURIComponent(results[1].replace(/\+/g, ' ')) : '';
+    }
+    function updateLinks() {
+      var query = getQueryString(),
+          links = document.getElementsByClassName('team-btn');
+      for (var i=0; i<links.length; i++ ) { links[i].href = links[i].href + '&' + query; }
+    }
+  </script>
+</head>
+<body>
+  <section class="flex one three-800">
+    <h3 class="hdr"><a class="pseudo button" href="#" onclick="return showHideInstructions()">1. Install the CTC link &#x25BC;</a></h3>
+    <div class="instructions">
+      <b>1. Make sure your favorites bar is shown</b>. <small>If not, right click the toolbar, then click "Favorites bar" or "Bookmarks Toolbar".</small>
+      <div class="centered"><img src="https://dl.dropboxusercontent.com/s/4durxhdv9sem3ez/show-favorites.gif" alt="Show Favorites" width="350px"></img></div>
+    </div>
+    <div class="instructions">
+      <b>2. Install the CTC link</b>. <small>Drag this link to your Favorites bar - <A HREF="javascript:(function(){d=document;el=d.createElement('script');el.setAttribute('src','https://dl.dropboxusercontent.com/s/n6npeon155uonhk/ctc.js');d.getElementsByTagName('head')[0].appendChild(el)})()">CTC</A>.</small>
+      <div class="full center"><small><span class="note">You can also save the <b>team board</b> links to by dragging them to the Favorites toolbar.</span></small></div>
+      <div class="centered"><A HREF="javascript:(function(){d=document;el=d.createElement('script');el.setAttribute('src','https://dl.dropboxusercontent.com/s/n6npeon155uonhk/ctc.js');d.getElementsByTagName('head')[0].appendChild(el)})()"><img src="https://dl.dropboxusercontent.com/s/gb75zyusdu6l676/install-ctc.gif" alt="CTC"></img></a></div>
+    </div>
+    <div class="instructions">
+      <b>3. Start CTC</b>. <small>Open a team board, then click the CTC link.</small>
+      <div class="centered"><img src="https://dl.dropboxusercontent.com/s/fka89xoe8tghsx5/start-ctc.gif" alt="Show Favorites"></img></div>
+    </div>
+  </section>
+  <section class="flex one three-500 center">
+    <h3 class="hdr">2. Open a Team Board, then click the CTC link:</h3>
+    <div><a class="button team-btn" href="http://mpages.cernerworkswan.com/P0701/ProviderHome_ICU/html/1mp_ProviderHome_webservice.html?teamBoard=1">Team 1</a></div>
+    <div><a class="button team-btn" href="http://mpages.cernerworkswan.com/P0701/ProviderHome_ICU/html/1mp_ProviderHome_webservice.html?teamBoard=2">Team 2</a></div>
+    <div><a class="button team-btn" href="http://mpages.cernerworkswan.com/P0701/ProviderHome_ICU/html/1mp_ProviderHome_webservice.html?teamBoard=3">Team 3</a></div>
+    <div><a class="button team-btn" href="http://mpages.cernerworkswan.com/P0701/ProviderHome_ICU/html/1mp_ProviderHome_webservice.html?teamBoard=4">Team 4</a></div>
+    <div><a class="button team-btn" href="http://mpages.cernerworkswan.com/P0701/ProviderHome_ICU/html/1mp_ProviderHome_webservice.html?teamBoard=5">Team 5</a></div>
+    <div><a class="button team-btn" href="http://mpages.cernerworkswan.com/P0701/ProviderHome_ICU/html/1mp_ProviderHome_webservice.html?teamBoard=6">Team 6</a></div>
+    <div><a class="button team-btn" href="http://mpages.cernerworkswan.com/P0701/ProviderHome_ICU/html/1mp_ProviderHome_webservice.html?unitBoard=CANCER&unitBoardCluster=5">Hemonc</a></div>
+  </section>
+  <script>
+    showHideInstructions();
+    updateLinks();
+  </script>
+</body>
+</html>
